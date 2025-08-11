@@ -1,77 +1,66 @@
+function applyFocusModeStyles() {
+  const defaults = {
+    hideRecommendations: true,
+    hideComments: true,
+    hideShorts: true,
+  };
 
-function applyStyles(settings) {
-    const styleId = 'youtube-focus-mode-styles';
-    let style = document.getElementById(styleId);
-  
-    if (!style) {
-      style = document.createElement('style');
-      style.id = styleId;
-      document.head.appendChild(style);
+  chrome.storage.sync.get(defaults, function (settings) {
+    const styleId = "youtube-focus-mode-styles";
+    let styleElement = document.getElementById(styleId);
+
+    if (!styleElement) {
+      styleElement = document.createElement("style");
+      styleElement.id = styleId;
+      document.head.appendChild(styleElement);
     }
-  
-    let css = '';
-  
+
+    let css = ` `;
+
     if (settings.hideRecommendations) {
       css += `
-        #related { 
-          display: none !important; 
-        }
-      `;
+                #related { display: none !important; }
+            `;
     }
-  
+
     if (settings.hideComments) {
       css += `
-        #comments { 
-          display: none !important; 
-        }
-      `;
+                #comments { display: none !important; }
+            `;
     }
-  
-    if (settings.hideEndScreen) {
-      css += `
-        .ytp-endscreen-content { 
-          display: none !important; 
-        }
-      `;
-    }
-    
-    if (settings.hideMeta) {
-      css += `
-        #info.ytd-watch-flexy, #meta.ytd-watch-flexy {
-          display: none !important;
-        }
-      `;
-    }
-  
-    if (settings.hideShorts) {
 
+    if (settings.hideShorts) {
       css += `
-        ytd-rich-shelf-renderer[is-shorts], 
-        ytd-grid-video-renderer:has(a[href*="/shorts/"]) {
-          display: none !important;
-        }
-      `;
+                
+                /* 1. Hide Shorts link in the main navigation sidebar */
+                ytd-guide-entry-renderer a[title="Shorts"],
+                ytd-mini-guide-entry-renderer[aria-label="Shorts"] {
+                    display: none !important;
+                }
+
+                /* 2. Hide Shorts shelves on homepage, subscriptions, etc. */
+                ytd-rich-shelf-renderer[is-shorts] {
+                    display: none !important;
+                }
+
+                /* 3. Hide any video item that links to a Short in any list */
+                ytd-grid-video-renderer:has(a[href*="/shorts/"]),
+                ytd-rich-item-renderer:has(ytd-rich-grid-media[is-short]),
+                ytd-video-renderer:has(a[href*="/shorts/"]),
+                ytd-compact-video-renderer:has(a[href*="/shorts/"]) {
+                    display: none !important;
+                }
+            `;
     }
-  
-    style.textContent = css;
-  }
-  
-  chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-    if (request.action === "update") {
-      applyStyles(request.settings);
-    }
+
+    styleElement.textContent = css;
   });
-  
-  chrome.storage.sync.get(
-    {
-      hideRecommendations: true,
-      hideComments: true,
-      hideEndScreen: false,
-      hideMeta: false,
-      hideShorts: true
-    },
-    function (items) {
-      applyStyles(items);
-    }
-  );
-  
+}
+
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  if (request.action === "updateStyles") {
+    applyFocusModeStyles();
+  }
+});
+
+applyFocusModeStyles();
