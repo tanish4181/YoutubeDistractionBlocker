@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Focus Mode</title>
+    <link href="bootstrap-5.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            width: 300px;
+            padding: 15px;
+        }
+        h4 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <div class="container">
+        <h4 class="mb-4">Focus Mode</h4>
+
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="hideRecommendations">
+            <label class="form-check-label" for="hideRecommendations">Hide Recommendations</label>
+        </div>
+
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="hideComments">
+            <label class="form-check-label" for="hideComments">Hide Comments</label>
+        </div>
+
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="hideEndScreen">
+            <label class="form-check-label" for="hideEndScreen">Hide End-Screen Videos</label>
+        </div>
+        
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="hideMeta">
+            <label class="form-check-label" for="hideMeta">Hide Video Info</label>
+        </div>
+
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="hideShorts">
+            <label class="form-check-label" for="hideShorts">Hide Shorts Shelf</label>
+        </div>
+
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
