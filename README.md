@@ -62,5 +62,5 @@ The **Tab Tammer** extension icon should now appear in your browser's toolbar.
 
 I plan to **add more features in the future** to make the extension even more useful.  
 
-If you like it, please **give it a ⭐** on GitHub: [Tab Tammer](https://github.com/tanish4181/TabTammer)  
+If you like it, please **give it a ⭐** : [Tab Tammer](https://github.com/tanish4181/TabTammer)  
 
