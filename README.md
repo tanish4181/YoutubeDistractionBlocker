@@ -1,6 +1,6 @@
-# YouTube Focus Mode
+# Tab Tammer
 
-**YouTube Focus Mode** is a simple, lightweight **browser extension** designed to help you reclaim your focus on YouTube by removing distracting elements from the user interface.  
+**Tab Tammer** is a simple, lightweight **browser extension** designed to help you reclaim your focus on YouTube by removing distracting elements from the user interface.  
 
 Tired of falling down the rabbit hole of recommended videos or getting drawn into comment section debates? YouTube Focus Mode cleans up your viewing experience, allowing you to watch what you came for without the digital noise.
 
@@ -33,14 +33,14 @@ Since this extension is **not on the Chrome Web Store**, you need to load it man
 4. **Load the Extension:** Click the "Load unpacked" button.  
 5. **Select the Folder:** Choose the folder where you saved the extension files.  
 
-The **YouTube Focus Mode** extension icon should now appear in your browser's toolbar.
+The **Tab Tammer** extension icon should now appear in your browser's toolbar.
 
 ---
 
 ## How to Use
 
 1. Go to any page on `youtube.com`.  
-2. Click the **YouTube Focus Mode** icon in your browser's toolbar.  
+2. Click the **Tab Tammer** icon in your browser's toolbar.  
 3. A popup window will appear with toggles for:  
    - "Hide Recommendations"  
    - "Hide Comments"  
