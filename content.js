@@ -42,8 +42,12 @@ function applyFocusModeStyles() {
                 ytd-rich-shelf-renderer[is-shorts] {
                     display: none !important;
                 }
+                /* 3. Hide the Shorts shelf in the recommendations sidebar (Watch Page) */
+                ytd-reel-shelf-renderer {
+                    display: none !important;
+                }    
 
-                /* 3. Hide any video item that links to a Short in any list */
+                /* 4. Hide any video item that links to a Short in any list */
                 ytd-grid-video-renderer:has(a[href*="/shorts/"]),
                 ytd-rich-item-renderer:has(ytd-rich-grid-media[is-short]),
                 ytd-video-renderer:has(a[href*="/shorts/"]),
