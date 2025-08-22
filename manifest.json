@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Tab Tammer",
-  "version": "3.0",
+  "name": "Youtube Distraction Blocker",
+  "version": "1.0",
   "description": "Removes distracting elements like comments, recommendations, and shorts from YouTube.",
   "permissions": ["storage"],
   "host_permissions": ["*://*.youtube.com/*"],
