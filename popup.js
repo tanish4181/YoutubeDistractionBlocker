@@ -31,6 +31,12 @@ function loadSettings() {
   });
 }
 
+function openSupportPage() {
+  chrome.tabs.create({
+    url: chrome.runtime.getURL("contact.html")
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   loadSettings();
 
@@ -38,5 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   checkboxes.forEach(function (checkbox) {
     checkbox.addEventListener("change", saveSettingsAndNotify);
+  });
+
+  // Add support button event listener
+  document.getElementById("supportBtn").addEventListener("click", function(e) {
+    e.preventDefault();
+    openSupportPage();
   });
 });

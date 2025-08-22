@@ -3,7 +3,7 @@
   "name": "Youtube Distraction Blocker",
   "version": "1.0",
   "description": "Removes distracting elements like comments, recommendations, and shorts from YouTube.",
-  "permissions": ["storage"],
+  "permissions": ["storage", "tabs"],
   "host_permissions": ["*://*.youtube.com/*"],
   "action": {
     "default_popup": "popup.html",
@@ -24,5 +24,11 @@
       "js": ["content.js"],
       "run_at": "document_start"
     }
-  ]
+  ],
+  "web_accessible_resources": [
+  {
+    "resources": ["contact.html"],
+    "matches": ["<all_urls>"]
+  }
+]
 }

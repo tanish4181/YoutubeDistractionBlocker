@@ -15,6 +15,41 @@
         h4 {
             text-align: center;
         }
+
+        .support-btn {
+            background: linear-gradient(135deg, #0e1114 0%, #000000 100%);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .support-btn:hover {
+            background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+            color: white;
+        }
+
+        .support-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #dee2e6;
+            text-align: center;
+        }
+
+        .support-icon {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
     </style>
 </head>
 
@@ -36,6 +71,15 @@
         <div class="form-check form-switch">
             <input class="form-check-input" type="checkbox" role="switch" id="hideShorts">
             <label class="form-check-label" for="hideShorts">Hide All Shorts</label>
+        </div>
+
+        <div class="support-section">
+            <a href="#" id="supportBtn" class="support-btn">
+                <svg class="support-icon" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Support & Contact
+            </a>
         </div>
 
     </div>
