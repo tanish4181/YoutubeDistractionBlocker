@@ -3,6 +3,10 @@ function saveSettingsAndNotify() {
     hideRecommendations: document.getElementById("hideRecommendations").checked,
     hideComments: document.getElementById("hideComments").checked,
     hideShorts: document.getElementById("hideShorts").checked,
+    hideFeed: document.getElementById("hideFeed").checked,
+    hideLiveChat: document.getElementById("hideLiveChat").checked, // New feature
+    hideVideoTitle: document.getElementById("hideVideoTitle").checked, // New feature
+    hideChannelName: document.getElementById("hideChannelName").checked, // New feature
   };
 
   chrome.storage.sync.set(settings, function () {
@@ -21,6 +25,10 @@ function loadSettings() {
     hideRecommendations: true,
     hideComments: true,
     hideShorts: true,
+    hideFeed: false,
+    hideLiveChat: false, // New feature default
+    hideVideoTitle: false, // New feature default
+    hideChannelName: false, // New feature default
   };
 
   chrome.storage.sync.get(defaults, function (items) {
@@ -28,6 +36,10 @@ function loadSettings() {
       items.hideRecommendations;
     document.getElementById("hideComments").checked = items.hideComments;
     document.getElementById("hideShorts").checked = items.hideShorts;
+    document.getElementById("hideFeed").checked = items.hideFeed;
+    document.getElementById("hideLiveChat").checked = items.hideLiveChat; // New feature
+    document.getElementById("hideVideoTitle").checked = items.hideVideoTitle; // New feature
+    document.getElementById("hideChannelName").checked = items.hideChannelName; // New feature
   });
 }
 
@@ -46,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
     checkbox.addEventListener("change", saveSettingsAndNotify);
   });
 
-  // Add support button event listener
   document.getElementById("supportBtn").addEventListener("click", function(e) {
     e.preventDefault();
     openSupportPage();

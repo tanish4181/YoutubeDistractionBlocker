@@ -3,6 +3,10 @@ function applyFocusModeStyles() {
     hideRecommendations: true,
     hideComments: true,
     hideShorts: true,
+    hideFeed: false,
+    hideLiveChat: false, // New feature default
+    hideVideoTitle: false, // New feature default
+    hideChannelName: false, // New feature default
   };
 
   chrome.storage.sync.get(defaults, function (settings) {
@@ -31,7 +35,6 @@ function applyFocusModeStyles() {
 
     if (settings.hideShorts) {
       css += `
-                
                 /* 1. Hide Shorts link in the main navigation sidebar */
                 ytd-guide-entry-renderer a[title="Shorts"],
                 ytd-mini-guide-entry-renderer[aria-label="Shorts"] {
@@ -54,6 +57,30 @@ function applyFocusModeStyles() {
                 ytd-compact-video-renderer:has(a[href*="/shorts/"]) {
                     display: none !important;
                 }
+            `;
+    }
+
+    if (settings.hideFeed) {
+      css += `
+                ytd-two-column-browse-results-renderer #primary { display: none !important; }
+            `;
+    }
+
+    if (settings.hideLiveChat) {
+      css += `
+                ytd-live-chat-frame, #chat { display: none !important; }
+            `;
+    }
+    
+    if (settings.hideVideoTitle) {
+      css += `
+                h1.ytd-watch-metadata { display: none !important; }
+            `;
+    }
+    
+    if (settings.hideChannelName) {
+      css += `
+                ytd-video-owner-renderer { display: none !important; }
             `;
     }
 
