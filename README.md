@@ -49,4 +49,4 @@ To access support or contact information, click the mail icon in the popup to op
 
 I plan to add more features in the future to make the extension even more useful.
 
-If you like it, please give it a ⭐ : [Youtube Distraction Blocker](https://chromewebstore.google.com/detail/goonppdhiahdffbbifegmpgickeedobl?utm_source=item-share-cb)
+If you like it, please give it a ⭐ and check out the extension on : [Youtube Distraction Blocker](https://chromewebstore.google.com/detail/goonppdhiahdffbbifegmpgickeedobl?utm_source=item-share-cb)
