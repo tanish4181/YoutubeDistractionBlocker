@@ -1,0 +1,101 @@
+
+body {
+	background: linear-gradient(135deg, #181c24 0%, #23272f 100%);
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+.contact-card {
+	background: #23272f;
+	border-radius: 16px;
+	box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+	max-width: 370px;
+	width: 100%;
+	padding: 32px 24px 24px 24px;
+	text-align: center;
+}
+.contact-title {
+	font-size: 2rem;
+	font-weight: 700;
+	color: #f8f9fa;
+	margin-bottom: 0.5rem;
+}
+.contact-subtitle {
+	color: #bfc8db;
+	font-size: 1rem;
+	margin-bottom: 2rem;
+}
+.contact-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin-bottom: 2rem;
+}
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	font-weight: 600;
+	font-size: 1rem;
+	border-radius: 8px;
+	padding: 0.75rem 1.25rem;
+	text-decoration: none;
+	border: none;
+	cursor: pointer;
+	transition: background 0.2s, box-shadow 0.2s;
+}
+.btn-twitter {
+	background: #181c24;
+	color: #fff;
+}
+.btn-twitter:hover {
+	background: #444d56;
+	color: #1da1f2;
+	box-shadow: 0 2px 8px rgba(29,161,242,0.15);
+}
+.btn-feedback {
+	background: #ffc107;
+	color: #181c24;
+}
+.btn-feedback:hover {
+	background: #e0a800;
+	color: #fff;
+	box-shadow: 0 2px 8px rgba(255,193,7,0.15);
+}
+.contact-footer {
+	color: #fff;
+	font-size: 1rem;
+	margin-top: 1rem;
+	background: #181c24;
+	border-radius: 8px;
+	padding: 12px;
+	opacity: 0.85;
+}
+.icon-twitter::before {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-image: url('data:image/svg+xml;utf8,<svg fill="%231da1f2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>');
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-right: 4px;
+}
+.icon-feedback::before {
+	content: "\2714";
+	font-size: 20px;
+	color: #181c24;
+	margin-right: 4px;
+}
+@media (max-width: 600px) {
+	.contact-card {
+		max-width: 95vw;
+		padding: 16px 4px;
+	}
+	.contact-title {
+		font-size: 1.5rem;
+	}
+}

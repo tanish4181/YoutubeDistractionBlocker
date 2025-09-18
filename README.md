@@ -6,6 +6,29 @@ Tired of falling down the rabbit hole of recommended videos or getting drawn int
 
 ---
 
+## Project Structure
+
+```
+youtubeDistractionBlocker/
+├── src/
+│   ├── popup/
+│   │   ├── popup.html      # Main popup interface
+│   │   ├── popup.css       # Popup styling
+│   │   └── popup.js        # Popup functionality
+│   ├── contact/
+│   │   ├── contact.html    # Contact & feedback page
+│   │   └── contact.css     # Contact page styling
+│   └── content/
+│       └── content.js      # Content script for YouTube
+├── assets/
+│   └── images/             # Extension icons
+├── manifest.json           # Extension manifest
+├── README.md              # This file
+└── .gitignore             # Git ignore rules
+```
+
+---
+
 ## Features
 
 This extension gives you control over the most common distractions on YouTube. You can turn these features on or off from the extension's popup menu:
@@ -23,7 +46,25 @@ This extension gives you control over the most common distractions on YouTube. Y
 
 ---
 
+## Development Setup
 
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/tanish4181/Distraction-less.git
+   cd Distraction-less
+   ```
+
+2. **Load the extension in Chrome:**
+   - Open Chrome and go to `chrome://extensions/`
+   - Enable "Developer mode" in the top right
+   - Click "Load unpacked" and select the project folder
+   - The extension should now appear in your toolbar
+
+3. **Make changes:**
+   - Edit files in the `src/` directory
+   - Reload the extension in `chrome://extensions/` to see changes
+
+---
 
 ## How to Use
 
@@ -42,8 +83,6 @@ This extension gives you control over the most common distractions on YouTube. Y
 To access support or contact information, click the mail icon in the popup to open the support page.
 
 ---
-
-
 
 ## Future Plans
 

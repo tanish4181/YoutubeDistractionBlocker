@@ -4,9 +4,9 @@ function saveSettingsAndNotify() {
     hideComments: document.getElementById("hideComments").checked,
     hideShorts: document.getElementById("hideShorts").checked,
     hideFeed: document.getElementById("hideFeed").checked,
-    hideLiveChat: document.getElementById("hideLiveChat").checked, // New feature
-    hideVideoTitle: document.getElementById("hideVideoTitle").checked, // New feature
-    hideChannelName: document.getElementById("hideChannelName").checked, // New feature
+    hideLiveChat: document.getElementById("hideLiveChat").checked,
+    hideVideoTitle: document.getElementById("hideVideoTitle").checked,
+    hideChannelName: document.getElementById("hideChannelName").checked,
   };
 
   chrome.storage.sync.set(settings, function () {
@@ -26,9 +26,9 @@ function loadSettings() {
     hideComments: true,
     hideShorts: true,
     hideFeed: false,
-    hideLiveChat: false, // New feature default
-    hideVideoTitle: false, // New feature default
-    hideChannelName: false, // New feature default
+    hideLiveChat: false,
+    hideVideoTitle: false,
+    hideChannelName: false,
   };
 
   chrome.storage.sync.get(defaults, function (items) {
@@ -37,15 +37,15 @@ function loadSettings() {
     document.getElementById("hideComments").checked = items.hideComments;
     document.getElementById("hideShorts").checked = items.hideShorts;
     document.getElementById("hideFeed").checked = items.hideFeed;
-    document.getElementById("hideLiveChat").checked = items.hideLiveChat; // New feature
-    document.getElementById("hideVideoTitle").checked = items.hideVideoTitle; // New feature
-    document.getElementById("hideChannelName").checked = items.hideChannelName; // New feature
+    document.getElementById("hideLiveChat").checked = items.hideLiveChat;
+    document.getElementById("hideVideoTitle").checked = items.hideVideoTitle;
+    document.getElementById("hideChannelName").checked = items.hideChannelName;
   });
 }
 
 function openSupportPage() {
   chrome.tabs.create({
-    url: chrome.runtime.getURL("contact.html")
+    url: chrome.runtime.getURL("src/contact/contact.html")
   });
 }
 
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     checkbox.addEventListener("change", saveSettingsAndNotify);
   });
 
-  document.getElementById("supportBtn").addEventListener("click", function(e) {
+  document.getElementById("contactBtn").addEventListener("click", function(e) {
     e.preventDefault();
     openSupportPage();
   });
